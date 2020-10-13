@@ -1,40 +1,186 @@
+a {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration-color: inherit;
+    color: inherit;
+}
+button {
+    text-decoration: none;
+    border: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 .general {
     background-color: white;
+    -moz-appearance: none;
+}
+.images, .gmail, .button, .gluck {
+    color: rgba(0, 0, 0, .87);
+    font-size: 13px;
+    text-align: center;
 }
 .container {
     width: 100%;
-    height: 100%;
+    height: 780px;
+    margin: 45px 75px 0px 0px;
     display: grid;
-    grid-template-columns: 30% 10% 10% 10% 10% 30%;
+    grid-template-columns: 30% 10% 3% 7% 7% 3% 10% 30%;
     grid-template-rows: 20% 10% 10% 10% 50%;
     grid-gap: 3px;
     grid-template-areas: 
-        ". . . . . ."
-        ". . google google . ."
-        ". search search search search ."
-        ". . button1 button2 . ."
-        ". . . . . .";
+        ". . . . . . . ."
+        ". . google google google google . ."
+        ". search search search search search search ."
+        ". . . button1 button2 . . ."
+        ". . . . . . . .";
     justify-items: center;
     align-items: center;
 }
 .picture {
     grid-area: google;
 }
+.form {
+    grid-area: search;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-template-rows: 25px;
+    grid-template-areas: "magnify .";
+}
 .searchbar {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    padding-left: 30px;
-    width: 550px;
+    padding-left: 40px;
+    width: 580px;
     height: 45px;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 30px;
-    grid-area: search;
+    z-index: 2;
+}
+.searchbar:hover {
+    box-shadow:1px 1px 2px 2px rgba(236, 234, 234, .5), -1px -1px 2px 2px rgba(236,234,234,.02);
+    transform: scale(1.01);
+}
+.mag {
+    width: 25px;
+    height: 25px;
+    grid-area: magnify;
+    z-index: 1;
+    margin: 12px 0px 0px 38px;
+    opacity: .7;
+    transform: scale(.85);
+}
+.b1 {
+    grid-area: button1;
 }
 .button {
-    color: rgb(22, 22, 22);
-    font-size: 12px;
+    justify-self: right;
+    background-color: rgba(0, 0, 0, .07);
+    margin-right: 3px;
+    height: 35px;
+    width: 120px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+}
+.b2 {
+    grid-area: button2;
+}
+.gluck {
+    justify-self: left;
+    background-color: rgba(0, 0, 0, .07);
+    margin-left: 3px;
+    height: 35px;
+    width: 120px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 4px;
+}
+.button:hover, .gluck:hover {
+    border: 1px solid rgba(0, 0, 0, .12);
+    cursor: pointer;
+}
+.container-top {
+    position: fixed;
+    display: grid;
+    top: 20px;
+    right: 25px;
+    grid-template-columns: 1fr max-content max-content max-content max-content;
+    grid-template-rows: 20px;
+    grid-gap: 3px;
+    grid-template-areas: ". button3 button4 button5 button6" ;
+    justify-items: center;
+    align-items: center;
+}
+.gmail {
+    grid-area: button3;
+    padding: 7px;
+}
+.images {
+    grid-area: button4;
+    padding: 9px;
+}
+.grid {
+    width: 22px;
+    height: 22px;
+    opacity: 100%;
+    grid-area: button5;
+    fill: rgba(0, 0, 0, .87);
+    margin: 0px 12px 0px 0px;
+}
+.grid:hover {
+    opacity: .95;
+}
+.sign-up {
+    grid-area: button6;
+    height: 30px;
+    width: 86px;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(67, 135, 253);
+    border-radius: 2px;
+}
+.container-bot {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content 1fr max-content max-content max-content;
+    grid-template-rows: 50px;
+    grid-gap: 3px;
+    grid-template-areas: "button7 button8 button9 button10 . button11 button12 button13";
+    justify-items: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .07);
+    border-top:1px solid rgba(0, 0, 0, .1);
+}
+.werbe, .unternehmen, .about, .how-it-works, .data-protections, .terms-of-use, .settings {
+    text-align: center;
+    font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    grid-area: button1;
+    color: #5f6368;
+    margin: 5px 15px 5px 15px;
+}
+.werbe {
+    grid-area: button7;
+}
+.unternehmen {
+    grid-area: button8;
+}
+.about {
+    grid-area: button9;
+}
+.how-it-works {
+    grid-area: button10;
+}
+.data-protections {
+    grid-area: button11;
+}
+.terms-of-use {
+    grid-area: button12;
+}
+.settings {
+    grid-area: button13;
+    margin-right: 20px;
+    margin-left: 0px;
 }
